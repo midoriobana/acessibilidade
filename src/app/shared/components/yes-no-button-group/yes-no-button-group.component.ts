@@ -16,6 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   @Input() public value: string = 'no';
   @Input() public label = '';
+  @Input() disabled = false
   @Output() public valueChange = new EventEmitter<string>();
   public id: string = ''
   public options = YesNoButtonGroupOptions;
@@ -44,7 +45,7 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   }
 
   public setDisabledState?(isDisabled: boolean): void {
-    throw new Error("Method not implemented.");
+    this.disabled = isDisabled
   }
 
   public activate(value: string): void {
@@ -53,6 +54,6 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
 }
 
 enum YesNoButtonGroupOptions {
-  YES = 'yes',
-  NO = 'no'
+  YES = 'SIM',
+  NO = 'NÃO'
 }
