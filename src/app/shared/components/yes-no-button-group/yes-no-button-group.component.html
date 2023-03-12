@@ -1,0 +1,11 @@
+<div KeyboardManager class="btn-group" role="radiogroup" [attr.aria-labelledby]="id">
+  <label [attr.id]="id" class="me-3">{{ label }}</label>
+  <button type="radio" class="btn btn-light rounded-start-2" [attr.tabindex]="value === options.YES || value === null ? 0 : -1" role="radio"
+    [attr.aria-checked]="value === options.YES" (click)="activate(options.YES)">
+    Sim
+  </button>
+  <button type="radio" class="btn btn-light" [attr.tabindex]="value === options.NO ? 0 : -1" role="radio"
+    [attr.aria-checked]="value === options.NO" (click)="activate(options.NO)">
+    Não
+  </button>
+</div>

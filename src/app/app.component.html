@@ -1,0 +1,10 @@
+<main class="container p-2">
+  <h1>Form</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <app-yes-no-button-group
+      formControlName="yesNoAnswer"
+      label="Você é bom em Angular?">
+    </app-yes-no-button-group>
+    <button class="btn btn-light d-block mt-3">Submit</button>
+  </form>
+</main>
